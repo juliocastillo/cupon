@@ -1,0 +1,11 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+<h1>Bienvenido</h1>
+
+<p>
+    Hola <span class="label label-primary">{{ app.session.get('nombre') }}</span>
+</p>
+<p><a href="{{ path('ninfac_logout') }}">Salir</a>
+    
+{% endblock %}

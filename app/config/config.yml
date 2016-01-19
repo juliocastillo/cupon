@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: "@ninfacBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -67,3 +68,21 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+symfony_cmf_menu:
+    menu_basepath:        /cms/menu
+    document_manager_name: default
+    admin_class:          ~
+    document_class:       ~
+    content_url_generator:  router
+    content_key:          ~ # (resuelve a DynamicRouter::CONTENT_KEY)
+    route_name:           ~ # las rutas cmf son creadas por el contenido en lugar del nombre
+    content_basepath:     ~ # por omisión a symfony_cmf_core.content_basepath
+    use_sonata_admin:     auto # usa true/false para forzar si usar / no usar
+    # la administración de sonata
+    multilang:                # la sección multilang completa es opcional
+        use_sonata_admin:     auto # usa true/false para forzar el usar / no usar
+        # la administración de sonata
+        admin_class:          ~
+        document_class:       ~
+        locales:              [] # si usas multilang, tienes que definir por lo menos una región

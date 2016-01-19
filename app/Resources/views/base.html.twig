@@ -3,11 +3,38 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link href="{{asset('bundles/ninfac/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" >
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+        {# permite mostrar un mensaje #}
+        {% for flashMessage in app.session.flashbag.get('mensaje') %}
+            <span class="alert-success">
+                {{ flashMessage }}
+            </span>
+        {% endfor %}
+        
+        <ul>
+        <li class="first">
+          <a href="/">Home</a>
+        </li>
+        <li class="current">
+          <a href="#comments">Comments</a>
+        </li>
+        <li>
+          <a href="http://symfony-reloaded.org/">Symfony2</a>
+        </li>
+        <li class="last">
+          <span>Coming soon</span>
+        </li>
+      </ul>
+        
+        
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('bundles/ninfac/js/bootstrap.min.js') }}" ></script>
+        {% endblock %}
     </body>
 </html>

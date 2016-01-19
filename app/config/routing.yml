@@ -1,3 +1,21 @@
+ninfac_login:
+    path:   /login
+    defaults: {_controller: ninfacBundle:Default:login}
+
+ninfac_home:
+    path:   /
+    defaults: {_controller: ninfacBundle:Default:index}
+
+ninfac_logout:
+    path:   /logout
+    defaults: {_controller: ninfacBundle:Default:logout}
+
+
+ninfac:
+    resource: "@ninfacBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

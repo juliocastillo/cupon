@@ -1,0 +1,22 @@
+ninfacBundle\Entity\Usuarios:
+    type: entity
+    table: null
+    repositoryClass: ninfacBundle\Repository\UsuarioRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: '100'
+        correo:
+            type: string
+            length: '100'
+            unique: true
+        pass:
+            type: string
+            length: '100'
+    lifecycleCallbacks: {  }
