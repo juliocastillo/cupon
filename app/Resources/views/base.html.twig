@@ -15,25 +15,10 @@
                 {{ flashMessage }}
             </span>
         {% endfor %}
-        
-        <ul>
-        <li class="first">
-          <a href="/">Home</a>
-        </li>
-        <li class="current">
-          <a href="#comments">Comments</a>
-        </li>
-        <li>
-          <a href="http://symfony-reloaded.org/">Symfony2</a>
-        </li>
-        <li class="last">
-          <span>Coming soon</span>
-        </li>
-      </ul>
-        
-        
+       
         {% block body %}{% endblock %}
         {% block javascripts %}
+            <script src="{{ asset('bundles/ninfac/js/jquery.min.js') }}" ></script>            
             <script src="{{ asset('bundles/ninfac/js/bootstrap.min.js') }}" ></script>
         {% endblock %}
     </body>
